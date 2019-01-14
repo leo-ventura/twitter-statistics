@@ -32,12 +32,11 @@ function sortMapByKey(map) {
     return sorted;
 }
 
-/*  includeOnHTML uses the DOM to display our results to the user.
-*/
 function includeOnHTML(column1, column2, data, auxiliaryData=false) {
-    document.getElementById("response-table").innerHTML = "<thead><tr><th>" + column1 + "</th><th>" + column2 + "</th></tr></thead><tbody>";
+    document.getElementById("response-table").innerHTML = "<thead><tr><th>Rank</th><th>" + column1 + "</th><th>" + column2 + "</th></tr></thead><tbody>";
+    let rank = 0;
     for ([key, value] of data) {
-        document.getElementById("response-table").innerHTML += "<tr><th> " + (auxiliaryData[key] || key) + "</th><th>" + value + "</th></tr>";
+        document.getElementById("response-table").innerHTML += "<tr><th> " + (++rank) + "</th><th>" + (auxiliaryData[key] || key) + "</th><th>" + value + "</th></tr>";
     }
     document.getElementById("response-table").innerHTML += "</tbody>";
 }
