@@ -15,23 +15,6 @@ function sortMapByValue(map) {
     return sorted;
 }
 
-/* sorteMapByKey receives a map as input
-   and returns a sorted array using its keys
-*/
-function sortMapByKey(map) {
-    let sorted = [];
-    for (let key of map.keys()) {
-        sorted.push([key, map.get(key)]);
-    }
-
-    // sorting it
-    sorted.sort(function (a, b) {
-        return (b[0] > a[0]);
-    });
-
-    return sorted;
-}
-
 function includeOnHTML(column1, column2, data, auxiliaryData=false) {
     document.getElementById("response-table").innerHTML = "<thead><tr><th>Rank</th><th>" + column1 + "</th><th>" + column2 + "</th></tr></thead><tbody>";
     let rank = 0;
